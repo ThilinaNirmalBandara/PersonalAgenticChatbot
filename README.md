@@ -11,7 +11,7 @@ A minimal **agentic chat UI** built with **Streamlit** (frontend) and a **FastAP
 - 🔁 Chat UI with message history (Streamlit)
 - 🧩 Pluggable providers: **Groq** (LLaMA 3) and **Gemini**
 - 🌐 Optional web search tool (toggle in UI)
-- 🎨 Custom styling via external CSS and Streamlit theme
+- 🎨 Frontend Streamlit 
 - ⚡ FastAPI backend at `POST /chat` returning JSON
 
 ---
