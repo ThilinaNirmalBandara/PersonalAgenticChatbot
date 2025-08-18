@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+import uuid 
 
 # ── Page config (UI only)
 st.set_page_config(page_title="AI Agent Chatbot", page_icon="✨", layout="centered")
@@ -115,6 +116,9 @@ st.markdown(f"""
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
+if "session_id" not in st.session_state:  
+    st.session_state.session_id = str(uuid.uuid4())
+
 # ── Display chat history (same data; styled bubbles + avatars)
 for role, msg in st.session_state.chat_history:
     if role == "user":
@@ -137,6 +141,7 @@ if user_query:
         with st.spinner("Thinking..."):
             try:
                 payload = {
+                    "session_id": st.session_state.session_id, 
                     "model_name": model_name,
                     "model_provider": model_provider,
                     "system_prompt": system_prompt,

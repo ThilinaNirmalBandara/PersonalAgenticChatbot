@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from typing import List
 
 class RequestState(BaseModel):
+    session_id: str
     model_name: str
     model_provider: str
     system_prompt: str
